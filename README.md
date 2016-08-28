@@ -7,6 +7,6 @@ History:
 
     2016-08-28 :: added 5 new samples to repo
     2016-08-28 :: added offical flat assembler programmer's manual
-    2016-08-28 :: added 7rd sample - readlink
+    2016-08-28 :: added 7th sample - readlink
     2016-08-24 :: added fasm source code to repo, version 1.71.39
     2016-08-24 :: first 6 samples
