@@ -16,22 +16,23 @@ start:
     js      do_exit
 
     mov     rdx,rax
-.next:
-    ;; load byte from rsi to al and inc rsi
-    lodsb
-    or    al,al
-    jnz     .next
-    mov     [rsi-1], byte 0xa
+    
+    .next:
+        ;; load byte from rsi to al and inc rsi
+        lodsb
+        or    al,al
+        jnz     .next
+        mov     [rsi-1], byte 0xa
 
-    ;sys_write STDOUT
-    inc     rdx
-    mov     rsi, buf
-    mov     rdi, 1                                ; stdout
-    mov     eax, 1
-    syscall                                       ; write fd=1, buf, len
+        ;sys_write STDOUT
+        inc     rdx
+        mov     rsi, buf
+        mov     rdi, 1                                ; stdout
+        mov     eax, 1
+        syscall                                       ; write fd=1, buf, len
 
 do_exit:
-    xor     rdi, rdi
+    xor         rdi, rdi
     mov     rax, 60                               ; exit
     syscall
 
